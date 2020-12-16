@@ -20,6 +20,10 @@
             @enderror
         </div>
 
+        <div>
+            <a href="{{ route('password.request') }}">Forgotten your password?</a>
+        </div>
+
         <button type="submit">Login</button>
     </form>
 </x-app-layout>
