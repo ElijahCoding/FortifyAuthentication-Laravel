@@ -6,12 +6,20 @@
 
 <body>
 <ul>
-    <li>
-        <a href="">Login</a>
-    </li>
-    <li>
-        <a href="{{ route('register') }}">Register</a>
-    </li>
+    @guest
+        <li>
+            <a href="">Login</a>
+        </li>
+        <li>
+            <a href="{{ route('register') }}">Register</a>
+        </li>
+    @endguest
+
+    @auth
+        <li><a href="">{{ auth()->user()->name }}</a></li>
+            <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+    @endauth
+
 </ul>
 {{ $slot }}
 </body>
