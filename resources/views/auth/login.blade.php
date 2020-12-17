@@ -21,6 +21,11 @@
         </div>
 
         <div>
+            <input type="checkbox" name="remember" id="remember">
+            <label for="remember">Remember me</label>
+        </div>
+
+        <div>
             <a href="{{ route('password.request') }}">Forgotten your password?</a>
         </div>
 
