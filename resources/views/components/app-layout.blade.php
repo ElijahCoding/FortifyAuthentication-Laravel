@@ -8,7 +8,7 @@
 <ul>
     @guest
         <li>
-            <a href="">Login</a>
+            <a href="{{ route('login') }}">Login</a>
         </li>
         <li>
             <a href="{{ route('register') }}">Register</a>
@@ -18,7 +18,8 @@
     @auth
         <li><a href="">{{ auth()->user()->name }}</a></li>
         <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
-            <li><a href="{{ route('auth.delete') }}">Delete account</a></li>
+        <li><a href="{{ route('auth.delete') }}">Delete account</a></li>
+        <li><a href="{{ route('auth.twofactor') }}">Two factor</a></li>
         <li>
             <form action="{{ route('logout') }}" method="post">
                 @csrf
