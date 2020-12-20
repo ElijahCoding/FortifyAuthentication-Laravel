@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AccountDeletionController;
 use App\Http\Controllers\TwoFactorController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PasswordController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -12,6 +13,7 @@ Route::get('/', function () {
 
 Route::get('dashboard', DashboardController::class)->name('dashboard');
 Route::get('profile', ProfileController::class)->name('profile');
+Route::get('auth/password', PasswordController::class)->name('auth.password');
 
 Route::get('auth/delete', [AccountDeletionController::class, 'index'])->name('auth.delete');
 Route::post('auth/delete', [AccountDeletionController::class, 'destroy']);

@@ -18,6 +18,7 @@
     @auth
         <li><a href="{{ route('profile') }}">{{ auth()->user()->name }}</a></li>
         <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+            <li><a href="{{ route('auth.password') }}">Change password</a></li>
         <li><a href="{{ route('auth.delete') }}">Delete account</a></li>
         <li><a href="{{ route('auth.twofactor') }}">Two factor</a></li>
         <li>
