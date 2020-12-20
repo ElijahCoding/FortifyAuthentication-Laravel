@@ -1,21 +1,17 @@
 <x-app-layout>
-    <form action="{{ route('register') }}" method="post">
+    <form action="{{ route('user-password.update') }}" method="post">
         @csrf
+        @method('PUT')
+
+        @if(session('status') === 'password-updated')
+            <p>Your password has been updated.</p>
+        @endif
 
         <div>
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name">
+            <label for="current_password">Current password</label>
+            <input type="password" name="current_password" id="current_password">
 
-            @error('name')
-            <div>{{ $message }}</div>
-            @enderror
-        </div>
-
-        <div>
-            <label for="email">Email</label>
-            <input type="text" name="email" id="email">
-
-            @error('email')
+            @error('current_password')
             <div>{{ $message }}</div>
             @enderror
         </div>
@@ -38,6 +34,6 @@
             @enderror
         </div>
 
-        <button type="submit">Register</button>
+        <button type="submit">Change password</button>
     </form>
 </x-app-layout>
